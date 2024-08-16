@@ -35,38 +35,20 @@ $(function() {
     });
 
   });
-  // --------------------------------------------- //
-  // Loader & Loading Animation End
-  // --------------------------------------------- //
-
-  // --------------------------------------------- //
-  // Bootstrap Scroll Spy Plugin Settings Start
-  // --------------------------------------------- //
+ 
   const scrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: '#menu',
     smoothScroll: true,
     rootMargin: '0px 0px -40%',
   });
-  // --------------------------------------------- //
-  // Bootstrap Scroll Spy Plugin Settings End
-  // --------------------------------------------- //
-
-  // --------------------------------------------- //
-  // Lenis Scroll Plugin Start
-  // --------------------------------------------- //
+ 
   const lenis = new Lenis()
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
   requestAnimationFrame(raf)
-  // --------------------------------------------- //
-  // Lenis Scroll Plugin End
-  // --------------------------------------------- //
 
-  // ------------------------------------------------------------------------------ //
-  // Parallax (apply parallax effect to any element with a data-speed attribute) Start
-  // ------------------------------------------------------------------------------ //
   gsap.to("[data-speed]", {
     y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
     ease: "none",
@@ -77,14 +59,7 @@ $(function() {
       scrub: 0
     }
   });
-  // --------------------------------------------- //
-  // Parallax End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Scroll Animations Start
-  // --------------------------------------------- //
-  // Animation In Up
   const animateInUp = document.querySelectorAll(".animate-in-up");
   animateInUp.forEach((element) => {
     gsap.fromTo(element, {
@@ -250,13 +225,7 @@ $(function() {
       },
     });
   };
-  // --------------------------------------------- //
-  // Swiper Slider Start
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Contact Form Start
-  // --------------------------------------------- //
   $("#contact-form").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
@@ -275,13 +244,7 @@ $(function() {
 		});
 		return false;
 	});
-  // --------------------------------------------- //
-  // Contact Form End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Modernizr SVG Fallback Start
-  // --------------------------------------------- //
   if(!Modernizr.svg) {
     $("img[src*='svg']").attr("src", function() {
       return $(this).attr("src").replace(".svg", ".png");
@@ -321,13 +284,7 @@ $(function() {
   }
   //IE, Edge
   var isIE = /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) || /MSIE 10/i.test(navigator.userAgent) || /Edge\/\d+/.test(navigator.userAgent);
-  // --------------------------------------------- //
-  // Detecting Mobile/Desktop End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // PhotoSwipe Gallery Images Replace Start
-  // --------------------------------------------- //
   $('.gallery__link').each(function(){
     $(this)
     .append('<div class="picture"></div>')
