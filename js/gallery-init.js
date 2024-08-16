@@ -1,6 +1,5 @@
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-    // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
         var thumbElements = el.childNodes,
             numNodes = thumbElements.length,
@@ -42,7 +41,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 item.msrc = linkEl.children[0].getAttribute('src');
             }
 
-            item.el = figureEl; 
+            item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
         }
 
@@ -70,8 +69,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             return;
         }
 
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data- attribute
+        
         var clickedGallery = clickedListItem.parentNode,
             childNodes = clickedListItem.parentNode.childNodes,
             numChildNodes = childNodes.length,

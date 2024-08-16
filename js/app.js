@@ -4,9 +4,7 @@ $(function() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // --------------------------------------------- //
-  // Loader & Loading Animation Start
-  // --------------------------------------------- //
+
   const content = document.querySelector('body');
   const imgLoad = imagesLoaded(content);
 
@@ -41,14 +39,14 @@ $(function() {
     smoothScroll: true,
     rootMargin: '0px 0px -40%',
   });
- 
+
   const lenis = new Lenis()
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
   requestAnimationFrame(raf)
-
+  
   gsap.to("[data-speed]", {
     y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
     ease: "none",
@@ -250,13 +248,7 @@ $(function() {
       return $(this).attr("src").replace(".svg", ".png");
     });
   };
-  // --------------------------------------------- //
-  // Modernizr SVG Fallback End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Chrome Smooth Scroll Start
-  // --------------------------------------------- //
   try {
     $.browserSelector();
     if($("html").hasClass("chrome")) {
@@ -264,15 +256,9 @@ $(function() {
     }
   } catch(err) {
   };
- 
-  $("img, a").on("dragstart", function(event) { event.preventDefault(); });
-  // --------------------------------------------- //
-  // Images Moving Ban End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Detecting Mobile/Desktop Start
-  // --------------------------------------------- //
+  $("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
   var isMobile = false;
   if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $('html').addClass('touch');
@@ -290,15 +276,11 @@ $(function() {
     .append('<div class="picture"></div>')
     .children('.picture').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
   });
-  // --------------------------------------------- //
-  // PhotoSwipe Gallery Images Replace End
-  // --------------------------------------------- //
+
 
 });
 
-// --------------------------------------------- //
-// Color Switch Start
-// --------------------------------------------- //
+
 const themeBtn = document.querySelector('.color-switcher');
 
 function getCurrentTheme(){
@@ -328,16 +310,16 @@ themeBtn.addEventListener('click', () => {
   loadTheme(theme);
 });
 
-// --------------------------------------------- //
-// Share Button Start
-// --------------------------------------------- //
+
 $('.pswp__button--share').on('click', function(e) {
   e.preventDefault();
   e.stopPropagation();
   alert('Feature coming soon');
   return false;
 });
-
+// --------------------------------------------- //
+// Share Button End
+// --------------------------------------------- //
 
 var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
   shareEl: false,
