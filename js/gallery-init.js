@@ -1,6 +1,5 @@
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-    // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
         var thumbElements = el.childNodes,
@@ -43,7 +42,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 item.msrc = linkEl.children[0].getAttribute('src');
             }
 
-            item.el = figureEl; // save link to element for getThumbBoundsFn
+            item.el = figureEl; 
             items.push(item);
         }
 

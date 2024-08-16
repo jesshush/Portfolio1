@@ -1,39 +1,3 @@
-// ------------------------------------------------
-// Project Name: Braxton - Personal Portfolio & Resume HTML Template
-// Project Description: Show yourself brightly with Braxton - unique and creative portfolio and resume template!
-// Tags: mix_design, resume, portfolio, personal page, cv, template, one page, responsive, html5, css3, creative, clean
-// Version: 1.0.0
-// Build Date: March 2024
-// Last Update: March 2024
-// This product is available exclusively on Themeforest
-// Author: mix_design
-// Author URI: https://themeforest.net/user/mix_design
-// File name: app.js
-// ------------------------------------------------
-
-// ------------------------------------------------
-// Table of Contents
-// ------------------------------------------------
-//
-//  01. Loader & Loading Animation
-//  02. Bootstrap Scroll Spy Plugin Settings
-//  03. Lenis Scroll Plugin
-//  04. Parallax
-//  05. Scroll Animations
-//  06. Smooth Scrolling
-//  07. Swiper Slider
-//  08. Contact Form
-//  09. Modernizr SVG Fallback
-//  10. Chrome Smooth Scroll
-//  11. Images Moving Ban
-//  12. Detecting Mobile/Desktop
-//  13. PhotoSwipe Gallery Images Replace
-//  14. Color Switch
-//
-// ------------------------------------------------
-// Table of Contents End
-// ------------------------------------------------
-
 $(function() {
 
   "use strict";
@@ -212,13 +176,7 @@ $(function() {
   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-2", {y: 0, opacity: 1}));
   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-3", {y: 0, opacity: 1}));
   ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-5", {y: 0, opacity: 1}));
-  // --------------------------------------------- //
-  // Scroll Animations End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Smooth Scrolling Start
-  // --------------------------------------------- //
   $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -240,13 +198,7 @@ $(function() {
       }
     }
   });
-  // --------------------------------------------- //
-  // Smooth Scrolling End
-  // --------------------------------------------- //
 
-  // --------------------------------------------- //
-  // Swiper Slider Start
-  // --------------------------------------------- //
   const toolsSlider = document.querySelector("tools-slider");
   const testimonialsSlider = document.querySelector("testimonials-slider");
 
@@ -349,13 +301,7 @@ $(function() {
     }
   } catch(err) {
   };
-  // --------------------------------------------- //
-  // Chrome Smooth Scroll End
-  // --------------------------------------------- //
-
-  // --------------------------------------------- //
-  // Images Moving Ban Start
-  // --------------------------------------------- //
+ 
   $("img, a").on("dragstart", function(event) { event.preventDefault(); });
   // --------------------------------------------- //
   // Images Moving Ban End
@@ -434,9 +380,7 @@ $('.pswp__button--share').on('click', function(e) {
   alert('Feature coming soon');
   return false;
 });
-// --------------------------------------------- //
-// Share Button End
-// --------------------------------------------- //
+
 
 var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
   shareEl: false,
